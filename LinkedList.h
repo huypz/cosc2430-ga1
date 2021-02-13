@@ -9,7 +9,6 @@ class LinkedList {
     struct Node {
         Node() : next(nullptr), prev(nullptr), val(0) {};
         Node(E val) : next(nullptr), prev(nullptr), val(val) {};
-        Node(Node<E>* N) : next(N->next), prev(N->prev), val(N->val) {};
         Node<E>* next;
         Node<E>* prev;
         E val;
@@ -24,8 +23,8 @@ class LinkedList {
         bool removeElement(const T& e);
         void removeIndex(int i);
         void reverse();
-        std::ostream& write(std::ofstream& ofs) const;
-        std::ostream& writeCode(std::ostream& ofs) const;
+        std::ofstream& write(std::ofstream& ofs) const;
+        std::ofstream& writeCode(std::ofstream& ofs) const;
     private:
         Node<T>* header;
         Node<T>* trailer;
@@ -137,7 +136,7 @@ LinkedList<T>::Node<T>* LinkedList<T>::reverse(Node<T>* cursor) {
 }
 
 template <typename T>
-std::ostream& LinkedList<T>::write(std::ofstream& ofs) const {
+std::ofstream& LinkedList<T>::write(std::ofstream& ofs) const {
     ofs << "[";
     Node<T>* curr = header->next;
     while (curr->next != trailer) {
@@ -149,7 +148,7 @@ std::ostream& LinkedList<T>::write(std::ofstream& ofs) const {
 }
 
 template <typename T>
-std::ostream& LinkedList<T>::writeCode(std::ostream& ofs) const {
+std::ofstream& LinkedList<T>::writeCode(std::ofstream& ofs) const {
     ofs << "| ";
     Node<T>* curr = header->next;
     while (curr->next != trailer) {
