@@ -1,0 +1,4 @@
+Sarah: [5, 5, 4]
+Alex: [2, 6]
+Decoded passcode: | 6 | 4 | 5 | 5 |
+Actual passcode: | 6 | 4 | 5 | 5 |
